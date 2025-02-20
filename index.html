@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yohannes G/gergs - Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #f4b400;
+        }
+        .content {
+            display: none;
+            padding: 20px;
+            animation: fadeIn 0.5s ease-in;
+        }
+        .active {
+            display: block;
+        }
+        .about img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin: 0 auto;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #f4b400;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+        <a href="#" onclick="showSection('experience')">Experience</a>
+    </nav>
+    
+    <div id="home" class="content active">
+        <h1>Welcome to My Personal Website</h1>
+        <p>Explore my profile using the navigation menu.</p>
+    </div>
+    
+    <div id="about" class="content about">
+        <h1>About Me</h1>
+        <img src="j.jpg" alt="Yohannes G/gergs">
+        <p>My name is Yohannes G/gergs. I was born in Tigray, Mekelle, on July 21, 2000 (GC). 
+        I studied from grade 1 to grade 12 at Mercyful Paradise Academy. My passion is playing football.
+        Currently, I am a 3rd-year Computer Science student at Mekelle University.</p>
+    </div>
+    
+    <div id="contact" class="content">
+        <h1>Contact Me</h1>
+        <div class="contact-form">
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="experience" class="content">
+        <h1>My Experience</h1>
+        <p>Currently pursuing Computer Science at Mekelle University with a passion for technology and problem-solving.</p>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
